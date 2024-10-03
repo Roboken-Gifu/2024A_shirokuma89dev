@@ -5,13 +5,17 @@
 
 class SUB_MCU {
    private:
-    HardwareSerial *serial;
+    Uart *serial;
     char sendData;
     bool shouldBldcEnable;
     bool shouldPushBall;
 
+    const int baudrate = 115200;
+
    public:
-    SUB_MCU(HardwareSerial *serial);
+    SUB_MCU(Uart *serial);
+
+    void enableUart(void);
 
     void send(void);
     void enableBldc(bool enable);

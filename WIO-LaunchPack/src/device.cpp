@@ -9,11 +9,13 @@ const int Period = 10;
 
 // ACTUATOR
 MOTOR motor[2] = {MOTOR(BCM11, BCM27), MOTOR(BCM13, BCM26)};  // 右左
-// SUB_MCU sub_mcu(&Serial1);
+SUB_MCU sub_mcu(&Serial1);
 
 // FUNCTION
 void initUART(void) {
     Serial.begin(115200);
+
+    sub_mcu.enableUart();
 }
 
 void initI2C(void) {

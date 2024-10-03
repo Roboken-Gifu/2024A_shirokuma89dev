@@ -17,7 +17,7 @@ void initDevice(void);
 
 extern MOTOR motor[2];  // 右左
 
-// extern SUB_MCU sub_mcu;
+extern SUB_MCU sub_mcu;
 
 
 #endif
