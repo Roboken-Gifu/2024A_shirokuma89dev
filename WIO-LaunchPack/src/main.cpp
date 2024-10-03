@@ -13,25 +13,25 @@ void loop() {
     int deg = gyro.read();
     Serial.println(deg);
 
-    motor[0] = 100;
-    motor[1] = 100;
+    wheelMotor[0] = 100;
+    wheelMotor[1] = 100;
     Serial.println("[INFO] Set Motor Speed");
     delay(3000);
 
-    motor[0] = 0;
-    motor[1] = 0;
+    wheelMotor[0] = 0;
+    wheelMotor[1] = 0;
     Serial.println("[INFO] Stop Motor");
     delay(3000);
 
-    sub_mcu.enableBldc(true);
+    subMcu.enableBldc(true);
     Serial.println("[INFO] Enabled BLDC");
     delay(5000);
 
-    sub_mcu.pushBall(true);
+    subMcu.pushBall(true);
     Serial.println("[INFO] Pushed Ball");
     delay(3000);
 
-    sub_mcu.enableBldc(false);
+    subMcu.enableBldc(false);
     Serial.println("[INFO] Disabled BLDC");
     delay(5000);
 }

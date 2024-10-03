@@ -1,6 +1,6 @@
-#include "motor.h"
+#include "pwmMotor.h"
 
-MOTOR::MOTOR(int pin1, int pin2) {
+PWM_MOTOR::PWM_MOTOR(int pin1, int pin2) {
     this->pin1 = pin1;
     this->pin2 = pin2;
 
@@ -8,7 +8,7 @@ MOTOR::MOTOR(int pin1, int pin2) {
     pinMode(this->pin2, OUTPUT);
 }
 
-void MOTOR::drive(int speed) {
+void PWM_MOTOR::drive(int speed) {
     if (speed == 0) {
         analogWrite(this->pin1, 0);
         analogWrite(this->pin2, 0);
@@ -25,7 +25,7 @@ void MOTOR::drive(int speed) {
     }
 }
 
-int MOTOR::operator=(int speed) {
+int PWM_MOTOR::operator=(int speed) {
     this->drive(speed);
 
     return speed;

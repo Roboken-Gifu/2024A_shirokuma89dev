@@ -8,14 +8,14 @@ Adafruit_BNO055 bno055 = Adafruit_BNO055(55, 0x28, &Wire1);
 GYRO gyro(&bno055);
 
 // ACTUATOR
-MOTOR motor[2] = {MOTOR(BCM11, BCM27), MOTOR(BCM13, BCM26)};  // 右左
-SUB_MCU sub_mcu(&Serial1);
+PWM_MOTOR wheelMotor[2] = {PWM_MOTOR(BCM11, BCM27), PWM_MOTOR(BCM13, BCM26)};  // 右左
+SUB_MCU subMcu(&Serial1);
 
 // FUNCTION
 void initUART(void) {
     Serial.begin(115200);
 
-    sub_mcu.enableUart();
+    subMcu.enableUart();
 }
 
 void initI2C(void) {

@@ -1,4 +1,4 @@
-#include "sub_mcu.h"
+#include "subMcu.h"
 
 SUB_MCU::SUB_MCU(Uart *serial) {
     this->serial = serial;

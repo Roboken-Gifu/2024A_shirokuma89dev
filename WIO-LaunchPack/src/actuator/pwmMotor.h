@@ -3,13 +3,13 @@
 
 #include <Arduino.h>
 
-class MOTOR {
+class PWM_MOTOR {
    private:
     int pin1;
     int pin2;
 
    public:
-    MOTOR(int pin1, int pin2);
+    PWM_MOTOR(int pin1, int pin2);
     void drive(int speed);
 
     int operator=(int spped);
