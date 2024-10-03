@@ -20,5 +20,4 @@ extern PWM_MOTOR wheelMotor[2];  // 右左
 extern Uart Serial1;
 extern SUB_MCU subMcu;
 
-
 #endif

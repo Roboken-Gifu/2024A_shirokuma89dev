@@ -20,7 +20,7 @@ void loop() {
 
     wheelMotor[0] = 0;
     wheelMotor[1] = 0;
-    Serial.println("[INFO] Stop Motor");
+    Serial.println("[INFO] Stopped Motor");
     delay(3000);
 
     subMcu.enableBldc(true);
