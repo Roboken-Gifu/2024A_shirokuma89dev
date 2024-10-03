@@ -23,15 +23,15 @@ void loop() {
     Serial.println("[INFO] Stopped Motor");
     delay(3000);
 
-    subMcu.enableBldc(true);
+    subMcu.setBldcRotation(true);
     Serial.println("[INFO] Enabled BLDC");
     delay(5000);
 
-    subMcu.pushBall(true);
+    subMcu.pushBall();
     Serial.println("[INFO] Pushed Ball");
     delay(3000);
 
-    subMcu.enableBldc(false);
+    subMcu.setBldcRotation(false);
     Serial.println("[INFO] Disabled BLDC");
     delay(5000);
 }

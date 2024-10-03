@@ -18,8 +18,8 @@ class SUB_MCU {
     void enableUart(void);
 
     void send(void);
-    void enableBldc(bool enable);
-    void pushBall(bool push);
+    void setBldcRotation(bool enable);
+    void pushBall(void);
 };
 
 #endif

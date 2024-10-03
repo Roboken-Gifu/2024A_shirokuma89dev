@@ -18,12 +18,12 @@ void SUB_MCU::send(void) {
     this->shouldPushBall = false;
 }
 
-void SUB_MCU::enableBldc(bool enable) {
+void SUB_MCU::setBldcRotation(bool enable) {
     this->shouldBldcEnable = enable;
     this->send();
 }
 
-void SUB_MCU::pushBall(bool push) {
-    this->shouldPushBall = push;
+void SUB_MCU::pushBall(void) {
+    this->shouldPushBall = true;
     this->send();
 }
