@@ -4,8 +4,8 @@
 const int Period = 10;
 
 // SENSOR
-// Adafruit_BNO055 bno055 = Adafruit_BNO055(55, 0x28, &Wire1);
-// GYRO gyro(&bno055);
+Adafruit_BNO055 bno055 = Adafruit_BNO055(55, 0x28, &Wire1);
+GYRO gyro(&bno055);
 
 // ACTUATOR
 MOTOR motor[2] = {MOTOR(BCM11, BCM27), MOTOR(BCM13, BCM26)};  // 右左
@@ -27,6 +27,6 @@ void initDevice(void) {
     initI2C();
     initUART();
 
-    // gyro.init();
-    // gyro.setOffset();
+    gyro.init();
+    gyro.setOffset();
 }
