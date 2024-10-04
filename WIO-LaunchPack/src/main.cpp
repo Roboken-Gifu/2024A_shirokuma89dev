@@ -2,6 +2,8 @@
 
 #include "device.h"
 
+#include "./wifi/Ditel_Easy_WiFi.hpp"
+
 void setup() {
     Serial.begin(115200);
     Serial.println("[INFO] LaunchPack - Start");
@@ -10,8 +12,8 @@ void setup() {
 }
 
 void loop() {
-    int deg = gyro.read();
-    Serial.println(deg);
+    // int deg = gyro.read();
+    // Serial.println(deg);
 
     wheelMotor[0] = 100;
     wheelMotor[1] = 100;
