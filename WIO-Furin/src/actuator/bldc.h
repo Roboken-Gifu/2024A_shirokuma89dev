@@ -1,5 +1,5 @@
-#ifndef _SUB_MCU_H
-#define _SUB_MCU_H
+#ifndef _BLDC_H_
+#define _BLDC_H_
 
 #include <Arduino.h>
 

@@ -87,7 +87,7 @@ int GYRO::read(void) {
 
     deg = (int)(event.orientation.x - offset + 360) % 360;
 
-    return deg;
+    return deg > 180 ? deg - 360 : deg;
 }
 
 void GYRO::setOffset(void) {

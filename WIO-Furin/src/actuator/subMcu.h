@@ -1,25 +1,24 @@
-// #ifndef _SUB_MCU_H
-// #define _SUB_MCU_H
+#ifndef _SUB_MCU_H_
+#define _SUB_MCU_H_
 
-// #include <Arduino.h>
+#include <Arduino.h>
+#include <Wire.h>
 
-// class SUB_MCU {
-//    private:
-//     Uart *serial;
-//     char sendData;
-//     bool shouldBldcEnable;
-//     bool shouldPushBall;
+#define SERVO_NUM 2
+#define GPIO_NUM 2
 
-//     const int baudrate = 115200;
+class SUB_MCU {
+   private:
+    TwoWire *i2c;
 
-//    public:
-//     SUB_MCU(Uart *serial);
+   public:
+    SUB_MCU(TwoWire *i2c);
 
-//     void enableUart(void);
+    void enableI2cBus(void);
 
-//     void send(void);
-//     void setBldcRotation(bool enable);
-//     void pushBall(void);
-// };
+    void setLock(bool shouldLock);
+    void setPumpOn(bool shouldPumpOn);
+    void setBoxhold(bool shouldBoxhold);
+};
 
-// #endif
+#endif

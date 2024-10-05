@@ -1,6 +1,3 @@
-#ifndef _BLDC_H_
-#define _BLDC_H_
-
 #include "bldc.h"
 
 BLDC::BLDC(Uart *serial) {
@@ -12,19 +9,14 @@ void BLDC::enableUart(void) {
 }
 
 void BLDC::write() {
+    speed[0] = constrain(speed[0], -100, 100);
+    speed[1] = constrain(speed[1], -100, 100);
+
     char sendDataA = ((uint8_t)this->speed[0] >> 1) & 0B01111111;
     char sendDataB = ((uint8_t)this->speed[1] >> 1) | 0B10000000;
 
-    // Serial.println(sendData[2], BIN);
-
     this->serial->write(0B11111111);
-    // delayMicroseconds(500);
     this->serial->write(0B11111111);
-    // delayMicroseconds(500);
     this->serial->write(sendDataA);
-    // delayMicroseconds(500);
     this->serial->write(sendDataB);
-    // delayMicroseconds(500);
 }
-
-#endif

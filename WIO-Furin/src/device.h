@@ -5,7 +5,9 @@
 #include <Wire.h>
 
 #include "./sensor/gyro.h"
+
 #include "./actuator/bldc.h"
+#include "./actuator/subMcu.h"
 
 void initUART(void);
 void initI2C(void);
@@ -16,5 +18,9 @@ extern GYRO gyro;
 
 extern Uart Serial1;
 extern BLDC bldc;
+
+extern TwoWire Wire;
+extern TwoWire Wire1;
+extern SUB_MCU subMcu;
 
 #endif
