@@ -49,18 +49,4 @@ void loop() {
 
     servoUtil.setLock(shouldLock);
     servoUtil.setBoxHolder(shouldHold);
-
-    // 動作確認用
-    // unsigned long timer = millis();
-    // while (millis() - timer < 6000) {
-    //     digitalWrite(PIN_PUMP, HIGH);
-    //     servoUtil.setLock(false);
-    //     servoUtil.setBoxHolder(false);
-    // }
-
-    // timer = millis();
-    // while (millis() - timer < 5000) {
-    //     servoUtil.setLock(true);
-    //     servoUtil.setBoxHolder(true);
-    // }
 }
